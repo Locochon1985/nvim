@@ -153,5 +153,19 @@ return {
         "ellisonleao/gruvbox.nvim",
         priority = 1000,
     },
-    { "navarasu/onedark.nvim" },
+    {
+        "olimorris/onedarkpro.nvim",
+        priority = 1000, -- Ensure it loads first
+    },
+    {
+        "ribru17/bamboo.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require("bamboo").setup({
+                -- optional configuration here
+            })
+            require("bamboo").load()
+        end,
+    },
 }

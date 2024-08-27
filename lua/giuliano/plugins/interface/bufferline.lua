@@ -5,7 +5,11 @@ return {
     opts = {
         options = {
             mode = "tabs",
-            separator_style = "slope",
+            separator_style = "thin",
+            show_close_icon = false,
+            show_tab_indicators = true,
+            enforce_regular_tabs = false,
+            always_show_bufferline = true,
         },
     },
 }
