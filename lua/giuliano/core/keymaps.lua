@@ -1,13 +1,9 @@
 vim.g.mapleader = " "
-
 local keymap = vim.keymap -- for conciseness
-
+--Basic
 keymap.set("i", "jj", "<ESC>", { desc = "Exit insert mode with jk" })
-
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
-
 keymap.set("n", "<C-s>", "<cmd>w<CR>")
-
 keymap.set("n", ";", ":", { desc = "CMD enter command mode" })
 --telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", {})
