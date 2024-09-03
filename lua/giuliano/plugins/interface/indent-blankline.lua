@@ -7,7 +7,8 @@ return {
             char = "┊",
         },
         scope = {
-            char = "┊",
+            enabled = true,
+            show_end = false,
         },
     },
 }
