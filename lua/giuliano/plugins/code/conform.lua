@@ -20,6 +20,7 @@ return {
                 liquid = { "prettier" },
                 lua = { "stylua" },
                 python = { "isort", "black" },
+                latex = { "bibtex-tidy" },
             },
             formatters = {
                 black = {

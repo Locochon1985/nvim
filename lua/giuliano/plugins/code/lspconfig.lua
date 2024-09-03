@@ -85,6 +85,11 @@ return {
                     capabilities = capabilities,
                 })
             end,
+            ["ltex"] = function()
+                lspconfig["ltex"].setup({
+                    capabilities = capabilities,
+                })
+            end,
             ["pyright"] = function()
                 lspconfig["pyright"].setup({
                     capabilities = capabilities,
