@@ -2,6 +2,17 @@ vim.g.mapleader = " "
 local keymap = vim.keymap -- for conciseness
 -- themery
 keymap.set("n", "<leader>th", "<cmd>Themery<CR>", {})
+-- cmp
+keymap.set({ "i", "s" }, "<c-k>", function()
+    if ls.expand_or_jumpable() then
+        ls.expand_or_jump()
+    end
+end, { silent = true })
+keymap.set({ "i", "s" }, "<c-j>", function()
+    if ls.jumpable(-1) then
+        ls.jump(-1)
+    end
+end, { silent = true })
 -- toggle term
 keymap.set("n", "<s-m>", "<cmd>ToggleTerm direction=float<CR>", { desc = "Toggle terminal" })
 --Basic

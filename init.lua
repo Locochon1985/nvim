@@ -1,1 +1,1 @@
-require("giuliano.core")
+require("giuliano.config")
