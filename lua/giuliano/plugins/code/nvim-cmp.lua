@@ -31,6 +31,12 @@ return {
                 { name = "cmdline" },
             }),
         })
+        cmp.setup.cmdline({ "/", "?" }, {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = {
+                { name = "buffer" },
+            },
+        })
         cmp.setup({
             completion = {
                 completeopt = "menu,menuone,preview,noselect",
@@ -41,13 +47,24 @@ return {
                 end,
             },
             mapping = cmp.mapping.preset.insert({
-                ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
-                ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
-                ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+                ["<C-d>"] = cmp.mapping.scroll_docs(-4),
                 ["<C-f>"] = cmp.mapping.scroll_docs(4),
-                ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
-                ["<C-e>"] = cmp.mapping.abort(), -- close completion window
-                ["<CR>"] = cmp.mapping.confirm({ select = false }),
+                ["<C-e>"] = cmp.mapping.abort(),
+                ["<C-n>"] = cmp.mapping(function(fallback)
+                    if cmp.visible() then
+                        cmp.select_next_item()
+                    elseif luasnip.choice_active() then
+                        luasnip.change_choice(1)
+                    else
+                        fallback()
+                    end
+                end, { "i", "s" }),
+                ["<C-p>"] = cmp.mapping.select_prev_item(),
+                ["<C-y>"] = cmp.mapping.confirm({
+                    behavior = cmp.ConfirmBehavior.Insert,
+                    select = true,
+                }),
+                ["<c-space>"] = cmp.mapping.complete(),
             }),
             -- sources for autocompletion
             sources = cmp.config.sources({
