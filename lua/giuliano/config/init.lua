@@ -1,3 +1,3 @@
-require("giuliano.core.options")
-require("giuliano.core.keymaps")
-require("giuliano.core.lazy")
+require("giuliano.config.options")
+require("giuliano.config.keymaps")
+require("giuliano.config.lazy")
