@@ -122,4 +122,7 @@ return {
         priority = 1000,
         opts = {},
     },
+    {
+        "kdheepak/monochrome.nvim",
+    },
 }
