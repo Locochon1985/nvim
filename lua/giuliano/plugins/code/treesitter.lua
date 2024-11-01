@@ -22,20 +22,16 @@ return {
             autotag = {
                 enable = true,
             },
+            auto_install = true, -- automatically install missing parsers when entering buffer
             -- ensure these language parsers are installed
             ensure_installed = {
                 "json",
                 "javascript",
-                "yaml",
                 "python",
                 "html",
                 "css",
-                "bash",
                 "lua",
-                "vim",
                 "dockerfile",
-                "toml",
-                "vimdoc",
                 "c",
             },
             incremental_selection = {

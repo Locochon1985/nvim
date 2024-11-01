@@ -118,6 +118,18 @@ return {
                     },
                 })
             end,
+            ["ts_ls"] = function()
+                -- configure emmet language server
+                lspconfig["ts_ls"].setup({
+                    capabilities = capabilities,
+                    filetypes = {
+                        "typescriptreact",
+                        "typescript",
+                        "javascript",
+                        "javascriptreact",
+                    },
+                })
+            end,
             ["lua_ls"] = function()
                 -- configure lua server (with special settings)
                 lspconfig["lua_ls"].setup({
