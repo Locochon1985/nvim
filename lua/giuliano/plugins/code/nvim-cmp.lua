@@ -37,7 +37,7 @@ return {
                 { name = "buffer" },
             },
         })
-        cmp.setup({
+        local options = { -- configure cmp
             completion = {
                 completeopt = "menu,menuone,preview,noselect",
             },
@@ -81,6 +81,8 @@ return {
                     ellipsis_char = "...",
                 }),
             },
-        })
+        }
+        options = vim.tbl_deep_extend("force", options, require("nvchad.cmp"))
+        require("cmp").setup(options)
     end,
 }

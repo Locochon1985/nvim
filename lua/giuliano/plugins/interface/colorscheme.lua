@@ -111,18 +111,23 @@ return {
             })
         end,
     },
-    { "rose-pine/neovim", name = "rose-pine" },
     {
-        "ellisonleao/gruvbox.nvim",
-        priority = 1000,
+        "nvchad/ui",
+        config = function()
+            require("nvchad")
+        end,
     },
     {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {},
+        "nvchad/base46",
+        lazy = true,
+        build = function()
+            require("base46").load_all_highlights()
+        end,
     },
     {
-        "kdheepak/monochrome.nvim",
+        "nvchad/volt",
+    },
+    vim = {
+        colorscheme = { "nvchad" },
     },
 }

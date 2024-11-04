@@ -15,7 +15,6 @@ return {
                 json = { "prettier" },
                 lua = { "stylua" },
                 python = { "isort", "black" },
-                latex = { "bibtex-tidy" },
             },
             formatters = {
                 black = {
