@@ -6,8 +6,8 @@ M.base46 = {
 }
 M.ui = {
     statusline = {
-        theme = "minimal",
-        separator_style = "round",
+        theme = "default",
+        separator_style = "arrow",
     },
     cmp = {
         lspkind_text = true,

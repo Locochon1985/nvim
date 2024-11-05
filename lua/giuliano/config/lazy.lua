@@ -18,7 +18,10 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     spec = {
         -- add LazyVim and import its plugins
-        { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+        { "LazyVim/LazyVim", import = "lazyvim.plugins", colorscheme = "catppuccin" },
+        { "mini.icons", enabled = false },
+        { "mini.pairs", enabled = false },
+        { "mini.ai", enabled = false },
         -- import/override with your plugins
         { import = "giuliano.plugins" },
         { import = "giuliano.plugins.code" },
@@ -29,6 +32,10 @@ require("lazy").setup({
     defaults = {
         lazy = false,
         version = false, -- always use the latest git commit
+    },
+    install = {
+        -- install missing plugins on startup. This doesn't increase startup time.
+        colorscheme = { "catppuccin" },
     },
     checker = {
         enabled = true, -- check for plugin updates periodically
